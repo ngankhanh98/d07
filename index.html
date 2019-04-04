@@ -11,6 +11,7 @@
     <header>Đăng kí học phần</header>
     <div id="container">
       <form name="myForm" method="POST">
+        <!-- Student Information -->
         <div class="row">
           <div class="col-left-25">
             <label for="id">Mã số:</label>
@@ -44,36 +45,55 @@
             <select name="year" id="year" onload="load_sel_year"></select>
           </div>
         </div>
-      </form>
-
-      <div id="subjects">
-        <div class="row" style="width:50%"">
-          <div class="col">
-            <label for="subjects">Các môn học:</label>
-            <div id="sub_area">
-              <table>
-              <tr>
-                <td>b</td>
-              </tr>
-            </table></div>
-          </div>
-          <div class="col" id="button_area">
-            <button type="button" id="choose">></button>
-            <button type="button" id="choose_all">>></button>
-            <button type="button" id="clear">></button>
-            <button type="button" id="clear_all"><<</button>
-          </div>
-          <div class="col">
-            <label for="chosen_sub">Đã chọn:</label>
-            <div id="sub_area">
-              <table>
-                <tr>
-                  <td>b</td>
-                </tr>
-              </table>
+        <!-- Subjects Area -->
+        <div id="subjects">
+          <div class="row" style="width:50%">
+            <div class=" col">
+              <label for="subjects">Các môn học:</label>
+              <div id="sub_area">
+                <table id="default_sub"></table>
+              </div>
+            </div>
+            <div class="col" id="operate_button">
+              <button type="submit" id="choose">></button>
+              <button type="submit" id="choose_all">>></button>
+              <button type="submit" id="clear">></button>
+              <button type="submit" id="clear_all">
+                <<
+              </button>
+            </div>
+            <div class="col">
+              <label for="chosen_sub">Đã chọn:</label>
+              <div id="sub_area">
+                <table id="chosen_sub"></table>
+              </div>
             </div>
           </div>
         </div>
+        <div class="row" style="width:50%" id="submit_button">
+          <button type="submit" id="register">Đăng kí</button>
+          <button type="submit" id="check">Xem danh sách</button>
+          <button type="submit" id="submit">Submit</button>
+        </div>
+      </form>
+
+      <div id="list">
+        <table id="list_table">
+          <theah>
+            <th>Mã số:</th>
+            <th>Họ tên:</th>
+            <th>Giới tính:</th>
+            <th>Ngày sinh:</th>
+          </theah>
+          <tbody>
+            <tr>
+              <td>001</td>
+              <td>Lan</td>
+              <td>Nữ</td>
+              <td>1998</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </body>
