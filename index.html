@@ -10,7 +10,12 @@
   <body>
     <header>Đăng kí học phần</header>
     <div id="container">
-      <form name="myForm" method="POST">
+      <form
+        name="myForm"
+        id="myForm"
+        method="GET"
+        onsubmit="return validateForm()"
+      >
         <!-- Student Information -->
         <div class="row">
           <div class="col-left-25">
@@ -22,6 +27,7 @@
               id="student_id"
               name="student_id"
               placeholder="001"
+              required
             />
           </div>
         </div>
@@ -35,6 +41,7 @@
               id="fullname"
               name="fullname"
               placeholder="Nguyễn Văn A"
+              required
             />
           </div>
         </div>
@@ -64,49 +71,51 @@
           <div class="row" style="width:50%">
             <div class=" col">
               <label>Các môn học:</label>
-              <div id="sub_area">
-                <table id="default_sub"></table>
-                </table>
-              </div>
+              <select id="default_sub"> </select>
             </div>
             <div class="col" id="operate_button">
-              <button type="submit" id="choose">></button>
-              <button type="submit" id="choose_all">>></button>
-              <button type="submit" id="clear">></button>
-              <button type="submit" id="clear_all">
+              <button type="button" id="choose" onclick="choose_sub()">
+                >
+              </button>
+              <button type="button" id="choose_all" onclick="choose_allsub()">
+                >>
+              </button>
+              <button type="button" id="clear" onclick="clear_sub()"><</button>
+              <button type="button" id="clear_all" onclick="clear_allsub()">
                 <<
               </button>
             </div>
             <div class="col">
               <label for="selected_sub">Đã chọn:</label>
-              <div id="sub_area">
-                <table id="selected_sub"></table>
-              </div>
+              <select id="selected_sub"> </select>
             </div>
           </div>
         </div>
         <div class="row" style="width:50%" id="submit_button">
-          <button type="submit" id="register">Đăng kí</button>
+          <button type="button" id="register" onclick="form_submit()">
+            Đăng kí
+          </button>
           <button type="submit" id="check">Xem danh sách</button>
-          <button type="submit" id="submit">Submit</button>
+          <button type="submit" id="btn_submit">Submit</button>
         </div>
       </form>
 
       <div id="list">
-        <table id="list_table">
+        <table id="btm_table">
           <theah>
             <th>Mã số:</th>
             <th>Họ tên:</th>
             <th>Giới tính:</th>
             <th>Ngày sinh:</th>
           </theah>
+
           <tbody>
-            <tr>
+            <!-- <tr>
               <td>001</td>
               <td>Lan</td>
               <td>Nữ</td>
               <td>1998</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
