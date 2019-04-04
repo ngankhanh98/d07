@@ -17,6 +17,11 @@ header {
 
 label {
   font-weight: bold;
+  display: inline-block;
+}
+
+.gender {
+  font-weight: normal;
 }
 
 .row {
@@ -28,7 +33,7 @@ label {
   float: left;
   width: 25%;
   padding: 8px;
-  text-align: end;
+  text-align: center;
 }
 
 .col-right-75 {
@@ -47,10 +52,6 @@ label {
   display: table;
   clear: both;
 } */
-
-label {
-  display: inline-block;
-}
 
 input[type="text"],
 textarea,
@@ -73,7 +74,7 @@ select {
   border-radius: 4px;
 }
 #year {
-  width: 50%;
+  width: 40%;
 }
 
 #subjects {
@@ -104,12 +105,13 @@ button {
   padding: 8px;
   margin: 5px;
   border-radius: 4px;
+  border: none;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   /* resize: vertical; */
 }
 
 button:hover {
-  background-color: #000;
+  background-color: #00adef;
   box-shadow: 0px 5px 5px rgba(2, 2, 2, 0);
   color: #fff;
   cursor: pointer;
@@ -131,4 +133,8 @@ button:hover {
 #list td {
   padding: 10px;
   border: 1px solid #ccc;
+}
+
+td {
+  cursor: pointer;
 }

@@ -14,44 +14,59 @@
         <!-- Student Information -->
         <div class="row">
           <div class="col-left-25">
-            <label for="id">Mã số:</label>
+            <label for="student_id">Mã số:</label>
           </div>
           <div class="col-right-75">
-            <input type="text" name="student_id" />
+            <input
+              type="text"
+              id="student_id"
+              name="student_id"
+              placeholder="001"
+            />
           </div>
         </div>
         <div class="row">
           <div class="col-left-25">
             <label for="fullname">Họ tên:</label>
           </div>
-          <div class="col-right-75"><input type="text" name="fullname" /></div>
+          <div class="col-right-75">
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Nguyễn Văn A"
+            />
+          </div>
         </div>
         <div class="row">
           <div class="col-left-25">
-            <label for="gender">Giới tính:</label>
+            <label>Giới tính:</label>
           </div>
           <div class="col-right-75">
-            <input type="radio" name="myForm" value="male" />Nam
-            <input type="radio" name="myForm" value="female" /> Nữ
+            <input type="radio" name="myForm" value="male" id="male" />
+            <label for="male" class="gender">Nam</label>
+            <input type="radio" name="myForm" value="female" id="female" />
+            <label for="female" class="gender">Nữ</label>
           </div>
         </div>
         <div class="row">
           <div class="col-left-25">
-            <label for="dob">Ngày sinh:</label>
+            <label for="month">Ngày sinh:</label>
           </div>
           <div class="col-right-75">
-            <select name="day" id="day" onload="load_sel_day"></select>
-            <select name="month" id="month" onload="load_sel_month"></select>
-            <select name="year" id="year" onload="load_sel_year"></select>
+            <select name="month" id="month"></select>
+            <select name="day" id="day"></select>
+            <select name="year" id="year"></select>
           </div>
         </div>
         <!-- Subjects Area -->
         <div id="subjects">
           <div class="row" style="width:50%">
             <div class=" col">
-              <label for="subjects">Các môn học:</label>
+              <label>Các môn học:</label>
               <div id="sub_area">
                 <table id="default_sub"></table>
+                </table>
               </div>
             </div>
             <div class="col" id="operate_button">
@@ -63,9 +78,9 @@
               </button>
             </div>
             <div class="col">
-              <label for="chosen_sub">Đã chọn:</label>
+              <label for="selected_sub">Đã chọn:</label>
               <div id="sub_area">
-                <table id="chosen_sub"></table>
+                <table id="selected_sub"></table>
               </div>
             </div>
           </div>
