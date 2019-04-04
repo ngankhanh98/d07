@@ -134,7 +134,10 @@ var validateForm = function() {
   return valid;
 };
 
+var list_obj = [];
 var form_submit = function() {
+  var object = {};
+
   if (validateForm()) {
     console.log(validateForm);
     var x_id = document.forms["myForm"]["student_id"].value;
@@ -160,17 +163,61 @@ var form_submit = function() {
       dob: x_dob,
       subjects_list: x_subjects_list,
     };
-
+    list_obj.push(object);
     insertBottomTable(object);
   }
 };
 
-var insertBottomTable = function(object) {
-  var table = document.getElementById("btm_table");
+// var insertBottomTable = function(object) {
+//   var table = document.getElementById("btm_table");
 
-  var row = table.insertRow(-1);
-  row.insertCell(0).innerHTML = object.id;
-  row.insertCell(1).innerHTML = object.name;
-  row.insertCell(2).innerHTML = object.gender;
-  row.insertCell(3).innerHTML = object.dob;
+//   var row = table.insertRow(-1);
+
+//   row.insertCell(0).innerHTML = object.id;
+//   row.insertCell(1).innerHTML = object.name;
+//   row.insertCell(2).innerHTML = object.gender;
+//   row.insertCell(3).innerHTML = object.dob;
+// };
+
+var insertBottomTable = function(object) {
+  var table = document.getElementById("btm_tbody");
+  var data =
+    "<td>" +
+    object.id +
+    "</td>" +
+    "<td>" +
+    object.name +
+    "</td> " +
+    " <td> " +
+    object.gender +
+    "</td> " +
+    " <td> " +
+    object.dob +
+    "</td> ";
+  var content = '<tr onclick="show_detail(this)">' + data + "</tr>";
+  table.innerHTML += content;
+};
+
+// document.getElementsByTagName("tr").onclick = function() {
+//   show_detail(this);
+// };
+
+var show_detail = function(e) {
+  var obj = list_obj[e.rowIndex - 1];
+  var content =
+    "Mã số: " +
+    obj.id +
+    "\nHọ tên: " +
+    obj.name +
+    "\nGiới tính: " +
+    obj.gender +
+    "\nNgày sinh: " +
+    obj.dob +
+    "\nMôn học:";
+
+  for (let index = 0; index < obj.subjects_list.length; index++) {
+    content += "\n" + obj.subjects_list[index];
+  }
+
+  alert(content);
 };
